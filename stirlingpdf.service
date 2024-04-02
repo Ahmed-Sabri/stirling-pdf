@@ -1,0 +1,19 @@
+[Unit]
+Description=Stirling-PDF service
+After=syslog.target network.target
+
+[Service]
+SuccessExitStatus=143
+
+User=root
+Group=root
+
+Type=simple
+
+EnvironmentFile=/opt/Stirling-PDF/.env
+WorkingDirectory=/opt/Stirling-PDF
+ExecStart=/usr/bin/java -jar Stirling-PDF-0.17.2.jar
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
