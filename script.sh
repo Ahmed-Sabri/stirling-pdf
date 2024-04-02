@@ -33,8 +33,8 @@ sudo apt install -y 'tesseract-ocr-*'
 ### Step 6: View installed languages:
 echo "View installed languages:"
 dpkg-query -W tesseract-ocr- | sed 's/tesseract-ocr-//g'
-### Step 7: Run Stirling-PDF
-java -jar /opt/Stirling-PDF/Stirling-PDF-*.jar
+
+##############################################################################
 ### Step 8: Adding a Desktop icon
 #Note: Currently the app will run in the background until manually closed.
 
@@ -75,3 +75,7 @@ systemctl enable stirlingpdf
 service stirlingpdf stop
 service stirlingpdf start
 service stirlingpdf restart
+#################################################################
+### Run Stirling-PDF ###
+echo "Running Stirling-PDF"
+java -jar /opt/Stirling-PDF/Stirling-PDF-*.jar
